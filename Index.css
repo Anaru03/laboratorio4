@@ -7,11 +7,17 @@
   --cuerpo_circular-4: hsla(341, 92%, 74%, 1);
   --cuerpo_circular-5: hsla(328, 100%, 69%, 1);
 
+  --eye-1: hsla(300, 100%, 100%, 1);
+  --eye-2: hsla(224, 78%, 51%, 1);
+  --eye-3: hsla(226, 77%, 18%, 1);
+  --eye-4: hsla(0, 0%, 0%, 1);
+
   --feet-1: hsla(347, 97%, 59%, 1);
   --feet-2: hsla(342, 100%, 33%, 1);
   --feet-3: hsla(345, 95%, 29%, 1);
   --feet-4: hsla(347, 97%, 60%, 1);
 
+  --shadow: hsla(240, 0%, 26%, 0.5);
 }
 
 .cuerpo_circular {
@@ -39,9 +45,113 @@
 .brazo_derecho,
 .pie_izqui,
 .pie_dere,
-.cuerpo_circular {
+.rubor,
+.cuerpo_circular,
+.ojo_izquierdo,
+.ojo_derecho {
   position: absolute;
 }
+
+.ojo_derecho {
+  width: 45px;
+  height: 106px;
+  top: 81px;
+  left: 261.5px;
+  background: var(--eye-4);
+  border-radius: 50%;
+  transform: rotate(-5deg);
+}
+.ojo_derecho::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 67px;
+  top: 34px;
+  left: 6px;
+  background: linear-gradient(to top, var(--eye-2) 10%, var(--eye-3) 30%);
+  border-radius: 50%;
+  margin-top: 35px; 
+  margin-left: 7px; 
+}
+
+.ojo_derecho::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  background: radial-gradient(
+      100% 100% at 50% 50%,
+      var(--eye-1) 49%,
+      var(--t) 50%
+    )
+    50% 11% / 24px 37px,
+    radial-gradient(100% 100% at 50% 50%, var(--eye-2) 49%, var(--t) 50%) 50%
+    7% / 31px 44px,
+    radial-gradient(100% 100% at 50% 50%, var(--eye-4) 49%, var(--t) 50%) 50%
+    58% / 35px 45px;
+  background-repeat: no-repeat;
+  filter: blur(0.5px);
+  border-radius: 50%;
+  margin-top: -100px; 
+  margin-left: -1px; 
+}
+
+
+.ojo_izquierdo {
+  width: 44px;
+  height: 102px;
+  top: 88px;
+  left: 176px;
+  background: var(--eye-4);
+  border-radius: 50%;
+  transform: rotate(0deg);
+}
+.ojo_izquierdo::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 67px;
+  background: linear-gradient(to top, var(--eye-2) 10%, var(--eye-3) 30%);
+  border-radius: 50%;
+  margin-top: 32px; 
+  margin-left: 5px; 
+}
+
+.ojo_izquierdo::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  background: radial-gradient(
+      100% 100% at 50% 50%,
+      var(--eye-1) 49%,
+      var(--t) 50%
+    )
+    50% 11% / 24px 37px,
+    radial-gradient(100% 100% at 50% 50%, var(--eye-2) 49%, var(--t) 50%) 50%
+    7% / 31px 44px,
+    radial-gradient(100% 100% at 50% 50%, var(--eye-4) 49%, var(--t) 50%) 50%
+    58% / 39px 45px;
+  background-repeat: no-repeat;
+  filter: blur(0.5px);
+  border-radius: 50%;
+  margin-top: -96px; 
+  margin-left: -1px;
+}
+
+
+.rubor {
+  width: 54px;
+  height: 41px;
+  top: 175px;
+  left: 109px;
+  background: var(--cuerpo_circular-5);
+  border-radius: 50%;
+  filter: blur(2px);
+  box-shadow: 217px -10px 2px 0 var(--cuerpo_circular-5);
+}
+
+
 
 .cuerpo_circular {
   width: 365px;
@@ -152,6 +262,9 @@
   margin-top: 20px;
 }
 
+.ojo_izquierdo ~ .ojo_derecho {
+  margin-top: 5px;
+}
 
 .Kirby > .brazo_izquierdo {
   background: radial-gradient(
