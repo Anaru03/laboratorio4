@@ -1,113 +1,163 @@
 :root {
-    --t: transparent;
-  
-    --cuerpo_circular-1: hsla(322, 100%, 86%, 1);
-    --cuerpo_circular-2: hsla(329, 100%, 84%, 1);
-    --cuerpo_circular-3: hsla(340, 97%, 77%, 1);
-    --cuerpo_circular-4: hsla(341, 92%, 74%, 1);
-    --cuerpo_circular-5: hsla(328, 100%, 69%, 1);
-  
-    --eye-1: hsla(300, 100%, 100%, 1);
-    --eye-2: hsla(224, 78%, 51%, 1);
-    --eye-3: hsla(226, 77%, 18%, 1);
-    --eye-4: hsla(0, 0%, 0%, 1);
-  
-    --boca_abierta-1: hsla(357, 78%, 54%, 1);
-    --boca_abierta-2: hsla(353, 98%, 17%, 1);
-    --boca_abierta-3: hsla(0, 0%, 100%, 0.08);
-    --boca_abierta-4: hsla(356, 78%, 43%, 1);
-  
-    --feet-1: hsla(347, 97%, 59%, 1);
-    --feet-2: hsla(342, 100%, 33%, 1);
-    --feet-3: hsla(345, 95%, 29%, 1);
-    --feet-4: hsla(347, 97%, 60%, 1);
-  
-    --shadow: hsla(240, 0%, 26%, 0.5);
-  }
-  
-  .cuerpo_circular {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .Kirby {
-    width: 500px;
-    height: 500px;
-    background: transparent;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1px;
-  }
-  
-  .brazo_izquierdo,
-  .brazo_derecho,
-  .cuerpo_circular {
-    position: absolute;
-  }
-  
-  
-  .cuerpo_circular {
-    width: 365px;
-    height: 358px;
-    top: 25px;
-    left: 64px;
-    background: radial-gradient(
-        100% 100% at 50% 50%,
-        var(--cuerpo_circular-1) 25%,
-        var(--cuerpo_circular-2),
-        var(--cuerpo_circular-4) 49%,
-        var(--t) 50%
-      )
-      80% 83% / 355px 358px;
-    background-repeat: no-repeat;
-    filter: drop-shadow(2px 15px 5px var(--shadow));
-  }
-  
-  .brazo_izquierdo {
-    width: 140px;
-    height: 110px;
-    top: 154px;
-    left: 17px;
-    background: radial-gradient(
-      at 20% 30%,
-      var(--cuerpo_circular-2) 5%,
-      var(--cuerpo_circular-3),
-      var(--cuerpo_circular-5)
-    );
-    border-radius: 50%;
-    transform: rotate(-32deg);
-  }
-  .brazo_derecho {
-    width: 125px;
-    height: 135px;
-    top: 87px;
-    left: 356px;
-    background: radial-gradient(
-      at 50% 30%,
-      var(--cuerpo_circular-1) 5%,
+  --t: transparent;
+
+  --cuerpo_circular-1: hsla(322, 100%, 86%, 1);
+  --cuerpo_circular-2: hsla(329, 100%, 84%, 1);
+  --cuerpo_circular-3: hsla(340, 97%, 77%, 1);
+  --cuerpo_circular-4: hsla(341, 92%, 74%, 1);
+  --cuerpo_circular-5: hsla(328, 100%, 69%, 1);
+
+  --feet-1: hsla(347, 97%, 59%, 1);
+  --feet-2: hsla(342, 100%, 33%, 1);
+  --feet-3: hsla(345, 95%, 29%, 1);
+  --feet-4: hsla(347, 97%, 60%, 1);
+
+}
+
+.cuerpo_circular {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Kirby {
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1px;
+}
+
+.brazo_izquierdo,
+.brazo_derecho,
+.pie_izqui,
+.pie_dere,
+.cuerpo_circular {
+  position: absolute;
+}
+
+.cuerpo_circular {
+  width: 365px;
+  height: 358px;
+  top: 25px;
+  left: 64px;
+  background: radial-gradient(
+      100% 100% at 50% 50%,
+      var(--cuerpo_circular-1) 25%,
       var(--cuerpo_circular-2),
-      var(--cuerpo_circular-4) 60%
-    );
-    border-radius: 50%;
-    filter: drop-shadow(0px 5px 10px var(--shadow));
-  }
+      var(--cuerpo_circular-4) 49%,
+      var(--t) 50%
+    )
+    80% 83% / 355px 358px;
+  background-repeat: no-repeat;
+  filter: drop-shadow(2px 15px 5px var(--shadow));
+}
 
-  .cuerpo_circular + .Kirby {
-    margin-top: 20px;
-  }
+.brazo_izquierdo {
+  width: 140px;
+  height: 110px;
+  top: 154px;
+  left: 17px;
+  background: radial-gradient(
+    at 20% 30%,
+    var(--cuerpo_circular-2) 5%,
+    var(--cuerpo_circular-3),
+    var(--cuerpo_circular-5)
+  );
+  border-radius: 50%;
+  transform: rotate(-32deg);
+}
+.brazo_derecho {
+  width: 125px;
+  height: 135px;
+  top: 87px;
+  left: 356px;
+  background: radial-gradient(
+    at 50% 30%,
+    var(--cuerpo_circular-1) 5%,
+    var(--cuerpo_circular-2),
+    var(--cuerpo_circular-4) 60%
+  );
+  border-radius: 50%;
+  filter: drop-shadow(0px 5px 10px var(--shadow));
+}
 
-  .Kirby > .brazo_izquierdo {
-    background: radial-gradient(
-      at 20% 30%,
-      var(--cuerpo_circular-2) 5%,
-      var(--cuerpo_circular-3),
-      var(--cuerpo_circular-5)
-    );
-  }
+.pie_dere {
+  width: 153px;
+  height: 234px;
+  top: 240px;
+  left: 251px;
+  background: radial-gradient(
+    circle at 50% 75%,
+    var(--feet-1) 10%,
+    var(--feet-2) 50%
+  );
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  transform: rotate(12deg);
+}
+
+.Kirby:first-child {
+  background-color: yellow;
+}
+
+.Kirby:last-child {
+  background-color: rgb(255, 255, 255);
+}
+
+.Kirby:nth-child(3) {
+  background-color: orange;
+}
+
+.brazo_izquierdo.pie_izqui {
+  background-color: purple;
+}
+
+.pie_izqui {
+  width: 213px;
+  height: 151px;
+  top: 252px;
+  left: 40px;
+  background: radial-gradient(at 45% 50%, var(--feet-2), var(--feet-1));
+  border-radius: 50%;
+  transform: rotate(41deg);
+  filter: drop-shadow(2px -1px 5px var(--shadow));
+}
+.pie_izqui::before {
+  content: "";
+
+  width: 213px;
+  height: 151px;
+  background: radial-gradient(
+      100% 100% at 50% 50%,
+      var(--feet-4) 49%,
+      var(--t) 50%
+    )
+    27% 21% / 80px 25px,
+    radial-gradient(100% 100% at 50% 50%, var(--feet-3) 49%, var(--t) 50%) 55%
+    80% / 185px 96px;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+.cuerpo_circular + .Kirby {
+  margin-top: 20px;
+}
+
+
+.Kirby > .brazo_izquierdo {
+  background: radial-gradient(
+    at 20% 30%,
+    var(--cuerpo_circular-2) 5%,
+    var(--cuerpo_circular-3),
+    var(--cuerpo_circular-5)
+  );
+}
