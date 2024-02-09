@@ -7,7 +7,22 @@
     --cuerpo_circular-4: hsla(341, 92%, 74%, 1);
     --cuerpo_circular-5: hsla(328, 100%, 69%, 1);
   
-    
+    --eye-1: hsla(300, 100%, 100%, 1);
+    --eye-2: hsla(224, 78%, 51%, 1);
+    --eye-3: hsla(226, 77%, 18%, 1);
+    --eye-4: hsla(0, 0%, 0%, 1);
+  
+    --boca_abierta-1: hsla(357, 78%, 54%, 1);
+    --boca_abierta-2: hsla(353, 98%, 17%, 1);
+    --boca_abierta-3: hsla(0, 0%, 100%, 0.08);
+    --boca_abierta-4: hsla(356, 78%, 43%, 1);
+  
+    --feet-1: hsla(347, 97%, 59%, 1);
+    --feet-2: hsla(342, 100%, 33%, 1);
+    --feet-3: hsla(345, 95%, 29%, 1);
+    --feet-4: hsla(347, 97%, 60%, 1);
+  
+    --shadow: hsla(240, 0%, 26%, 0.5);
   }
   
   .cuerpo_circular {
@@ -31,6 +46,12 @@
     border-radius: 1px;
   }
   
+  .brazo_izquierdo,
+  .brazo_derecho,
+  .cuerpo_circular {
+    position: absolute;
+  }
+  
   
   .cuerpo_circular {
     width: 365px;
@@ -49,8 +70,44 @@
     filter: drop-shadow(2px 15px 5px var(--shadow));
   }
   
-  
+  .brazo_izquierdo {
+    width: 140px;
+    height: 110px;
+    top: 154px;
+    left: 17px;
+    background: radial-gradient(
+      at 20% 30%,
+      var(--cuerpo_circular-2) 5%,
+      var(--cuerpo_circular-3),
+      var(--cuerpo_circular-5)
+    );
+    border-radius: 50%;
+    transform: rotate(-32deg);
+  }
+  .brazo_derecho {
+    width: 125px;
+    height: 135px;
+    top: 87px;
+    left: 356px;
+    background: radial-gradient(
+      at 50% 30%,
+      var(--cuerpo_circular-1) 5%,
+      var(--cuerpo_circular-2),
+      var(--cuerpo_circular-4) 60%
+    );
+    border-radius: 50%;
+    filter: drop-shadow(0px 5px 10px var(--shadow));
+  }
+
   .cuerpo_circular + .Kirby {
     margin-top: 20px;
   }
-  
+
+  .Kirby > .brazo_izquierdo {
+    background: radial-gradient(
+      at 20% 30%,
+      var(--cuerpo_circular-2) 5%,
+      var(--cuerpo_circular-3),
+      var(--cuerpo_circular-5)
+    );
+  }
