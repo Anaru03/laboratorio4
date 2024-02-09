@@ -1,0 +1,56 @@
+:root {
+    --t: transparent;
+  
+    --cuerpo_circular-1: hsla(322, 100%, 86%, 1);
+    --cuerpo_circular-2: hsla(329, 100%, 84%, 1);
+    --cuerpo_circular-3: hsla(340, 97%, 77%, 1);
+    --cuerpo_circular-4: hsla(341, 92%, 74%, 1);
+    --cuerpo_circular-5: hsla(328, 100%, 69%, 1);
+  
+    
+  }
+  
+  .cuerpo_circular {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .Kirby {
+    width: 500px;
+    height: 500px;
+    background: transparent;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1px;
+  }
+  
+  
+  .cuerpo_circular {
+    width: 365px;
+    height: 358px;
+    top: 25px;
+    left: 64px;
+    background: radial-gradient(
+        100% 100% at 50% 50%,
+        var(--cuerpo_circular-1) 25%,
+        var(--cuerpo_circular-2),
+        var(--cuerpo_circular-4) 49%,
+        var(--t) 50%
+      )
+      80% 83% / 355px 358px;
+    background-repeat: no-repeat;
+    filter: drop-shadow(2px 15px 5px var(--shadow));
+  }
+  
+  
+  .cuerpo_circular + .Kirby {
+    margin-top: 20px;
+  }
+  
