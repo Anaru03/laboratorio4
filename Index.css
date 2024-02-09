@@ -54,7 +54,7 @@
 .cuerpo_circular,
 .ojo_izquierdo,
 .ojo_derecho {
-  position: absolute;
+  position: fixed;
 }
 
 .ojo_derecho {
@@ -157,9 +157,9 @@
 }
 
 .boca_abierta {
-  width: 62px;
-  height: 53px;
-  top: 193px;
+  width: 82px;
+  height: 120px;
+  top: 190px;
   left: 214px;
   background: var(--boca_abierta-2);
   clip-path: path(
@@ -265,14 +265,13 @@
   height: 150px;
   top: 252px;
   left: 30px;
-  background: radial-gradient(at 40% 45%, var(--feet-2), var(--feet-1));
-  border-radius: 50%;
-  transform: rotate(41deg);
+  background: radial-gradient(at 50% 50%, var(--feet-2), var(--feet-1));
+  border-radius: 60%;
+  transform: rotate(40deg);
   filter: drop-shadow(3px -2px 4px var(--shadow));
 }
 .pie_izqui::before {
   content: "";
-
   width: 213px;
   height: 151px;
   background: radial-gradient(
