@@ -1,33 +1,28 @@
 :root {
   --t: transparent;
 
-  --cuerpo_circular-1: hsla(322, 100%, 86%, 1);
-  --cuerpo_circular-2: hsla(329, 100%, 84%, 1);
-  --cuerpo_circular-3: hsla(340, 97%, 77%, 1);
-  --cuerpo_circular-4: hsla(341, 92%, 74%, 1);
-  --cuerpo_circular-5: hsla(328, 100%, 69%, 1);
+  --cuerpo_circular-1: #f3b6dc;
+  --cuerpo_circular-2: #f0a4cb;
+  --cuerpo_circular-3: #f990b3;
+  --cuerpo_circular-4: #ea789c;
+  --cuerpo_circular-5: #fd58b0;
 
-  --eye-1: hsla(300, 100%, 100%, 1);
-  --eye-2: hsla(224, 78%, 51%, 1);
-  --eye-3: hsla(226, 77%, 18%, 1);
-  --eye-4: hsla(0, 0%, 0%, 1);
+  --eye-1: #ffffff;
+  --eye-2: #2155e4;
+  --eye-3: #0c1637;
+  --eye-4: #030303;
+  
+  --boca_abierta-1: #d12932;
+  --boca_abierta-2: #44030b;
+  --boca_abierta-3: hsla(0, 0%, 100%, 0.08);
+  --boca_abierta-4: hsla(356, 78%, 43%, 1);
 
-  --feet-1: hsla(347, 97%, 59%, 1);
-  --feet-2: hsla(342, 100%, 33%, 1);
-  --feet-3: hsla(345, 95%, 29%, 1);
-  --feet-4: hsla(347, 97%, 60%, 1);
+  --feet-1: #f12d58;
+  --feet-2: #9e0231;
+  --feet-3: #860727;
+  --feet-4: #f3315b;
 
-  --shadow: hsla(240, 0%, 26%, 0.5);
-}
-
-.cuerpo_circular {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  --shadow: hsla(0, 0%, 23%, 0.5);
 }
 
 .Kirby {
@@ -39,6 +34,16 @@
   justify-content: center;
   align-items: center;
   border-radius: 1px;
+}
+
+.cuerpo_circular {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .brazo_izquierdo,
@@ -151,7 +156,32 @@
   box-shadow: 217px -10px 2px 0 var(--cuerpo_circular-5);
 }
 
-
+.boca_abierta {
+  width: 62px;
+  height: 53px;
+  top: 193px;
+  left: 214px;
+  background: var(--boca_abierta-2);
+  clip-path: path(
+    "M 32,1 C 57,2 70,12 50,39 C 48,41 34,60 17,44 C -12,15 3,2 32,1"
+  );
+}
+.boca_abierta::after {
+  content: "";
+  display: block;
+  width: 62px;
+  height: 53px;
+  background: radial-gradient(
+      100% 100% at 50% 50%,
+      var(--boca_abierta-4),
+      var(--boca_abierta-1) 49%,
+      var(--t) 50%
+    )
+    50% 93% / 61px 30px;
+  background-repeat: no-repeat;
+  transform: rotate(-2deg);
+  filter: blur(0.5px);
+}
 
 .cuerpo_circular {
   width: 365px;
@@ -188,7 +218,7 @@
   width: 125px;
   height: 135px;
   top: 87px;
-  left: 356px;
+  left: 360px;
   background: radial-gradient(
     at 50% 30%,
     var(--cuerpo_circular-1) 5%,
@@ -200,10 +230,10 @@
 }
 
 .pie_dere {
-  width: 153px;
-  height: 234px;
-  top: 240px;
-  left: 251px;
+  width: 150px;
+  height: 230px;
+  top: 235px;
+  left: 250px;
   background: radial-gradient(
     circle at 50% 75%,
     var(--feet-1) 10%,
@@ -231,14 +261,14 @@
 }
 
 .pie_izqui {
-  width: 213px;
-  height: 151px;
+  width: 210px;
+  height: 150px;
   top: 252px;
-  left: 40px;
-  background: radial-gradient(at 45% 50%, var(--feet-2), var(--feet-1));
+  left: 30px;
+  background: radial-gradient(at 40% 45%, var(--feet-2), var(--feet-1));
   border-radius: 50%;
   transform: rotate(41deg);
-  filter: drop-shadow(2px -1px 5px var(--shadow));
+  filter: drop-shadow(3px -2px 4px var(--shadow));
 }
 .pie_izqui::before {
   content: "";
@@ -247,15 +277,15 @@
   height: 151px;
   background: radial-gradient(
       100% 100% at 50% 50%,
-      var(--feet-4) 49%,
-      var(--t) 50%
+      var(--feet-4) 45%,
+      var(--t) 45%
     )
-    27% 21% / 80px 25px,
-    radial-gradient(100% 100% at 50% 50%, var(--feet-3) 49%, var(--t) 50%) 55%
-    80% / 185px 96px;
+    25% 201% / 75px 30px,
+    radial-gradient(100% 100% at 50% 50%, var(--feet-3) 45%, var(--t) 55%) 55%
+    85% / 190px 95px;
   background-repeat: no-repeat;
-  border-radius: 50%;
-  filter: blur(10px);
+  border-radius: 45%;
+  filter: blur(12px);
 }
 
 .cuerpo_circular + .Kirby {
@@ -269,7 +299,7 @@
 .Kirby > .brazo_izquierdo {
   background: radial-gradient(
     at 20% 30%,
-    var(--cuerpo_circular-2) 5%,
+    var(--cuerpo_circular-2) 7%,
     var(--cuerpo_circular-3),
     var(--cuerpo_circular-5)
   );
